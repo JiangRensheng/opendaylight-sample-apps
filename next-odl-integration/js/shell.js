@@ -17,6 +17,7 @@
                 // basic authorization with user name and password admin/admin, first open url in the same browser
                 beforeSend:function(xhr){
                         xhr.setRequestHeader('Authorization', "Basic YWRtaW46YWRtaW4=");
+			//xhr.setRequestHeader('Accept', "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
                 },
 		type: 'GET',
 		// we are using a static file as an example, but if real remote ODL topology is used
