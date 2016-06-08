@@ -11,8 +11,13 @@
 	app.container(document.getElementById('next-app'));
 	// implementing an async http request
 	$.ajax({
-		//url: "http://172.16.39.132:8181/restconf/operational/network-topology:network-topology/topology/flow:1",
-		url: './data/flow-1.json',
+                url: "http://192.168.56.103:8181/restconf/operational/network-topology:network-topology/topology/flow:1",
+                //url: './data/flow-1.json',
+
+                // basic authorization with user name and password admin/admin, first open url in the same browser
+                beforeSend:function(xhr){
+                        xhr.setRequestHeader('Authorization', "Basic YWRtaW46YWRtaW4=");
+                },
 		type: 'GET',
 		// we are using a static file as an example, but if real remote ODL topology is used
 		// we need to set content-type to application/json to make server present data as JSON
